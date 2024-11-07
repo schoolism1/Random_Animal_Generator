@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Word Generator</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        #wordDisplay {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        #generateButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        #generateButton:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Random Animal Generator</h1>
+    <button id="generateButton">Reveal My Animal</button>
+    <div id="wordDisplay">Your word will appear here</div>
+
+    <script>
+        const words = [
+            "Anteater", "Bat", "Buffalo", "Camel", "Cat", "Caterpillar", "Cobra", "Cow", "Crab", 
+            "Crocodile", "Deer", "Dodo", "Dog", "Dolphin", "Duck", "Eel", "Fish", "Flamingo", 
+            "Frog", "Goat", "Hamster", "Horse (or Unicorn)", "Hummingbird", "Jellyfish", "Kangaroo", 
+            "Ladybug", "Lion", "Monkey", "Mouse", "Otter", "Owl", "Polar Bear", "Pigeon", "Rabbit", 
+            "Racoon", "Rat", "Rhinoceros", "Rooster", "Shark", "Sheep", "Snake", "Spider", "Tiger", 
+            "Tyrannosaurus Rex", "Vulture", "Whale", "Wolf", "Zebra"
+        ];
+
+        document.getElementById("generateButton").addEventListener("click", function() {
+            const randomIndex = Math.floor(Math.random() * words.length);
+            const randomWord = words[randomIndex];
+            document.getElementById("wordDisplay").textContent = randomWord;
+        });
+    </script>
+
+</body>
+</html>
